@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>北京涔源生物科技有限公司</title>
+    <!-- Stylesheets -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- Responsive File -->
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <!-- Color File -->
+    <link href="assets/css/color.css" rel="stylesheet" />
+    <style>
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .col-image {
+        width: 400px;
+      }
+      .col-text {
+        flex: 1;
+        padding: 20px;
+      }
+      /* 初始隐藏状态 */
+      .fade-section .col-dom {
+        opacity: 0;
+        transform: translateX(0) scale(0.95);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* 左边 */
+      .fade-section .col-left {
+        transform: translateX(-80px) scale(0.95);
+      }
+
+      /* 右边 */
+      .fade-section .col-right {
+        transform: translateX(80px) scale(0.95);
+      }
+
+      /* 滚动触发后 */
+      .fade-section.show .col-dom {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+
+      /* 做一点错位延迟（高级感） */
+      .fade-section.show .col-left {
+        transition-delay: 0.1s;
+      }
+
+      .fade-section.show .col-right {
+        transition-delay: 0.3s;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <div class="loader-wrap">
+        <div class="preloader">
+          <div class="preloader-close">Preloader Close</div>
+        </div>
+        <div class="layer layer-one"><span class="overlay"></span></div>
+        <div class="layer layer-two"><span class="overlay"></span></div>
+        <div class="layer layer-three"><span class="overlay"></span></div>
+      </div>
+      <!-- Main Header -->
+      <header class="main-header header-style-one">
+        <!-- Header Top -->
+        <div class="header-top">
+          <div class="auto-container">
+            <div class="inner-container">
+              <div class="left-column">
+                <ul class="contact-info">
+                  <li>
+                    <a href="mailto:needhelp@company.com"
+                      ><i class="pe-7s-paper-plane"></i
+                      >北京市平谷区大兴庄镇顺福路81号-220439</a
+                    >
+                  </li>
+                  <li>
+                    <a href="tel:928886660000"
+                      ><i class="pe-7s-mail-open"></i>market@cenyontech.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="right-column">
+                <!-- <ul class="social-icon">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                  </li>
+                </ul> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Upper -->
+        <div class="header-upper">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!--Logo-->
+              <div class="logo-box">
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="assets/images/logo.png" alt="" />涔源生物</a
+                  >
+                </div>
+              </div>
+              <div class="right-column">
+                <!--Nav Box-->
+                <div class="nav-outer">
+                  <!--Mobile Navigation Toggler-->
+                  <div class="mobile-nav-toggler">
+                    <img src="assets/images/icons/icon-bar.png" alt="" />
+                  </div>
+
+                  <!-- Main Menu -->
+                  <nav class="main-menu navbar-expand-md navbar-light">
+                    <div
+                      class="collapse navbar-collapse show clearfix"
+                      id="navbarSupportedContent"
+                    >
+                      <ul class="navigation">
+                        <li class="dropdown">
+                          <a href="index.html">首页</a>
+                        </li>
+                        <li><a href="company.html">走近涔源</a></li>
+                        <li class="dropdown">
+                          <a href="product.html">产品中心</a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#">联系我们</a>
+                          <ul>
+                            <li>
+                              <a href="contact.html">联系方式</a>
+                            </li>
+                            <li>
+                              <a href="message.html">留言板</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="join.html">招贤纳士</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+                <div class="navbar-right">
+                  <!-- <button type="button" class="theme-btn search-toggler">
+                    <span class="flaticon-search-1"></span>
+                  </button> -->
+                  <div class="contact-info">
+                    <div class="icon">
+                      <span class="fas fa-phone-volume"></span>
+                    </div>
+                    <div class="content">
+                      <h5>联系我们</h5>
+                      <h4>
+                        <a>+1 3333 3333</a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="header-upper">
+            <div class="auto-container">
+              <div class="inner-container">
+                <!--Logo-->
+                <div class="logo-box">
+                  <div class="logo">
+                    <a href="index.html"
+                      ><img src="assets/images/logo.png" alt="" />涔源生物</a
+                    >
+                  </div>
+                </div>
+                <div class="right-column">
+                  <!--Nav Box-->
+                  <div class="nav-outer">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler">
+                      <img src="assets/images/icons/icon-bar.png" alt="" />
+                    </div>
+
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md navbar-light"></nav>
+                  </div>
+                  <div class="navbar-right">
+                    <!-- <button type="button" class="theme-btn search-toggler">
+                      <span class="flaticon-search-1"></span>
+                    </button> -->
+                    <div class="contact-info">
+                      <div class="icon">
+                        <span class="fas fa-phone-volume"></span>
+                      </div>
+                      <div class="content">
+                        <h5>联系我们</h5>
+                        <h4>
+                          <a href="tel:+1(700)3330088">+1 3333 3333</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-remove"></span>
+          </div>
+
+          <nav class="menu-box">
+            <div class="nav-logo">
+              <a href="index.html"
+                ><img src="assets/images/logo.png" alt="" title=""
+              /></a>
+            </div>
+            <div class="menu-outer">
+              <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+            <!--Social Links-->
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <div class="nav-overlay">
+          <div class="cursor"></div>
+          <div class="cursor-follower"></div>
+        </div>
+      </header>
+      <!-- End Main Header -->
+
+      <!--Search Popup-->
+      <div id="search-popup" class="search-popup">
+        <div class="close-search theme-btn">
+          <span class="flaticon-remove"></span>
+        </div>
+        <div class="popup-inner">
+          <div class="overlay-layer"></div>
+          <div class="search-form">
+            <form method="post" action="index.html">
+              <div class="form-group">
+                <fieldset>
+                  <input
+                    type="search"
+                    class="form-control"
+                    name="search-input"
+                    value=""
+                    placeholder="Search Here"
+                    required
+                  />
+                  <input type="submit" value="Search Now!" class="theme-btn" />
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Title -->
+      <section
+        class="page-title"
+        style="background-image: url(assets/images/banner-2.jpg)"
+      >
+        <div class="auto-container">
+          <div class="content-box">
+            <div class="content-wrapper">
+              <div class="title">
+                <h1>产品中心</h1>
+              </div>
+              <ul class="bread-crumb">
+                <li>专注于高性能产品的研发与解决方案</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Driving info section -->
+      <section class="driving-info-section">
+        <div class="auto-container fade-section">
+          <div class="row">
+            <div class="col-image col-left col-dom">
+              <img
+                src="assets/images/product/image-1.png"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="col-text col-right col-dom">
+              <div class="content-block">
+                <div class="sec-title mb-20">
+                  <div class="sub-title">产品介绍</div>
+                  <h2>
+                    CYHPLC-100<br />
+                    高效液相色谱仪
+                  </h2>
+                </div>
+                <div class="text mb-20">
+                  CYHPLC-100型高效液相色谱分析系统搭载四元低压泵，泵流速范围为
+                  0.001～10毫升/分钟。
+                </div>
+                <div class="text mb-20">
+                  该系统集成紫外-可见光检测器，波长检测范围为 190～800
+                  纳米，配有氘灯和钨灯作为光源。
+                </div>
+                <div class="text mb-20">
+                  系统搭载先进软件系统，可实现数据的自动显示、打印与导出。
+                </div>
+                <div class="text mb-20">
+                  本高效液相色谱系统性能优异，可保障检测结果可靠，提升工作效率。
+                </div>
+                <!-- <div class="icon-box">
+                  <h4>该仪器可广泛应用于：</h4>
+                  <ul class="content">
+                    <div class="text">食品药品安全（现场快速筛查与确证）</div>
+                    <div class="text">药物研发（ADME 研究）</div>
+                    <div class="text">司法鉴定与临床检验</div>
+                    <div class="text">材料科学分析</div>
+                    <div class="text">
+                      天然产物品质鉴定
+                      化学与生物化学研究等领域的在线或现场实时检测。
+                    </div>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="driving-info-section">
+        <div class="auto-container fade-section">
+          <div class="row">
+            <div class="col-text col-left col-dom">
+              <div class="content-block">
+                <div class="sec-title mb-20">
+                  <div class="sub-title">产品介绍</div>
+                  <h2>
+                    CYUHPLC-200<br />
+                    超高效液相色谱仪
+                  </h2>
+                </div>
+                <div class="text mb-20">
+                  CYUHPLC-200型分析型超高效液相色谱系统配备双溶剂通道高压恒流泵。
+                </div>
+                <div class="text mb-20">
+                  最高泵压高达100MPa.系统搭载紫外-可见光检测器，检测波长范围为
+                  190～800 纳米。
+                </div>
+                <div class="text mb-20">
+                  该检测器具备自动校准功能，可优化氘灯能量,也可根据实际需要搭配二极管阵列检测器、荧光检测器、示差检测器等。
+                </div>
+                <div class="text mb-20">
+                  系统具备 EMC 电磁兼容功能，可避免其他电磁干扰。
+                </div>
+                <div class="text mb-20">
+                  本超高效液相色谱系统适用于实验室及工业领域的高端色谱分析应用。
+                </div>
+
+                <!-- <div class="icon-box">
+                  <h4>该仪器可广泛应用于：</h4>
+                  <ul class="content">
+                    <div class="text">食品药品安全（现场快速筛查与确证）</div>
+                    <div class="text">药物研发（ADME 研究）</div>
+                    <div class="text">司法鉴定与临床检验</div>
+                    <div class="text">材料科学分析</div>
+                    <div class="text">
+                      天然产物品质鉴定
+                      化学与生物化学研究等领域的在线或现场实时检测。
+                    </div>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-image col-right col-dom">
+              <img
+                src="assets/images/product/image-2.png"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="driving-info-section">
+        <div class="auto-container fade-section">
+          <div class="row">
+            <div class="col-image col-left col-dom">
+              <img
+                src="assets/images/product/image-3.png"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="col-text col-right col-dom">
+              <div class="content-block">
+                <div class="sec-title mb-20">
+                  <div class="sub-title">产品介绍</div>
+                  <h2>
+                    CYNANOLC-300<br />
+                    纳升液相色谱仪
+                  </h2>
+                </div>
+                <div class="text mb-20">
+                  CYNANOLC-300型纳升液相色谱仪是一套纳升LC系统，可在纳升流量下进行精准流速的溶剂输送。
+                </div>
+                <div class="text mb-20">
+                  CYNANOLC-300可与质谱仪联用，用于蛋白质组学、单细胞蛋白质组学等研究。
+                </div>
+                <div class="text mb-20">
+                  具有耐高压、高灵敏度、低系统死体积和高的保留时间重复性等特点。
+                </div>
+                <div class="text mb-20">
+                  系统具备智能维护功能，如自动检漏、压力测试等。
+                </div>
+                <!-- <div class="icon-box">
+                  <h4>该仪器可广泛应用于：</h4>
+                  <ul class="content">
+                    <div class="text">食品药品安全（现场快速筛查与确证）</div>
+                    <div class="text">药物研发（ADME 研究）</div>
+                    <div class="text">司法鉴定与临床检验</div>
+                    <div class="text">材料科学分析</div>
+                    <div class="text">
+                      天然产物品质鉴定
+                      化学与生物化学研究等领域的在线或现场实时检测。
+                    </div>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="driving-info-section">
+        <div class="auto-container fade-section">
+          <div class="row">
+            <div class="col-text col-left col-dom">
+              <div class="content-block">
+                <div class="sec-title mb-20">
+                  <div class="sub-title">产品介绍</div>
+                  <h2>
+                    CYLCMS-1000 <br />
+                    三重四极杆液质联用仪
+                  </h2>
+                </div>
+                <div class="text mb-20">
+                  CYLCMS-1000型三重四极杆液质联用仪具备更高的选择性、准确度与重现性，同时拥有更优异的检测限与定量限。
+                </div>
+                <div class="text mb-20">
+                  该仪器搭载更强力的离子源，离子产率出色，质荷比（m/z）检测范围为
+                  2 至 3000。
+                </div>
+                <div class="text mb-20">
+                  仪器采用新一代步进扫描离子传输技术完成升级，有效提升了检测灵敏度。
+                </div>
+                <div class="text mb-20">
+                  设备标配标准方法库、自动调谐、智能多反应监测（MRM）及智能批处理功能，并内置定制化报告输出功能，操控软件简洁易用。
+                </div>
+
+                <!-- <div class="icon-box">
+                  <h4>该仪器可广泛应用于：</h4>
+                  <ul class="content">
+                    <div class="text">食品药品安全（现场快速筛查与确证）</div>
+                    <div class="text">药物研发（ADME 研究）</div>
+                    <div class="text">司法鉴定与临床检验</div>
+                    <div class="text">材料科学分析</div>
+                    <div class="text">
+                      天然产物品质鉴定
+                      化学与生物化学研究等领域的在线或现场实时检测。
+                    </div>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-image col-right col-dom">
+              <img
+                src="assets/images/product/image-4.png"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="driving-info-section">
+        <div class="auto-container fade-section">
+          <div class="row">
+            <div class="col-image col-left col-dom">
+              <img
+                src="assets/images/product/image-5.png"
+                loading="lazy"
+                alt=""
+              />
+            </div>
+            <div class="col-text col-right col-dom">
+              <div class="content-block">
+                <div class="sec-title mb-20">
+                  <div class="sub-title">产品介绍</div>
+                  <h2>
+                    CYHRMS-2000<br />
+                    高分辨液质联用仪
+                  </h2>
+                </div>
+                <div class="text mb-20">
+                  CYHRMS-2000型
+                  LC-QTOF高分辨液质联用仪具有卓越的灵敏度、高稳定性、超高分辨率（高达33万FWHM）、高质量精度和超快的采集速率。
+                </div>
+                <div class="text mb-20">
+                  配备专业的质谱控制软件和分析软件，定性定量分析简单、高效，可广泛适合于临床医学研究、法医毒理学、药物分析、食品安全、公安司法鉴定等诸多领域，满足不同应用领域用户的使用需求。
+                </div>
+                <!-- <div class="icon-box">
+                  <h4>该仪器可广泛应用于：</h4>
+                  <ul class="content">
+                    <div class="text">食品药品安全（现场快速筛查与确证）</div>
+                    <div class="text">药物研发（ADME 研究）</div>
+                    <div class="text">司法鉴定与临床检验</div>
+                    <div class="text">材料科学分析</div>
+                    <div class="text">
+                      天然产物品质鉴定
+                      化学与生物化学研究等领域的在线或现场实时检测。
+                    </div>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer
+        class="main-footer"
+        style="background-image: url(assets/images/background/bg-1.jpg)"
+      >
+        <div class="auto-container">
+          <!--Widgets Section-->
+          <div class="widgets-section">
+            <div class="clearfix">
+              <!--Column-->
+              <div class="column">
+                <div class="widget contact-widget">
+                  <h3 class="widget-title">联系方式</h3>
+                  <div class="widget-content">
+                    <ul class="contact-info">
+                      <li>
+                        <div class="icon">
+                          <span class="fas fa-flag"></span>
+                        </div>
+                        <div class="text">
+                          地址 <br />
+                          北京市平谷区大兴庄镇顺福路81号-220439
+                        </div>
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <span class="fas fa-phone-volume"></span>
+                        </div>
+                        <div class="text">
+                          联系电话<br />
+                          +133 3333 3333
+                        </div>
+                      </li>
+                      <li>
+                        <div class="icon">
+                          <span class="fas fa-external-link"></span>
+                        </div>
+                        <div class="text">
+                          市场渠道<br />
+                          market@cenyontech.com
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="wrapper-box">
+              <div class="copyright">
+                <div class="text">(c) 2026 北京涔源生物科技有限公司</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!--End pagewrapper-->
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html">
+      <span class="flaticon-right-arrow-4"></span>
+    </div>
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/lazyload.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/TweenMax.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/jquery.polyglot.language.switcher.js"></script>
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".fade-section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          {
+            threshold: 0.3, // 进入30%触发
+          }
+        );
+
+        sections.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>
