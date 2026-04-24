@@ -451,7 +451,7 @@
           submitButton.disabled = true;
 
           try {
-            var response = await fetch("/send-message", {
+            var response = await fetch("/api/send-message", {
               method: "POST",
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
