@@ -302,7 +302,7 @@
               </div>
               <!--Contact Form-->
               <div class="contact-form">
-                <form method="post" id="contact-form">
+                <form method="post" action="/send-message" id="contact-form">
                   <div class="row">
                     <div class="form-group col-md-12">
                       <input
@@ -315,7 +315,7 @@
                     </div>
                     <div class="form-group col-md-12">
                       <input
-                        type="text"
+                        type="email"
                         name="email"
                         value=""
                         placeholder="联系邮箱"
@@ -326,17 +326,11 @@
                     <div class="form-group col-md-12">
                       <textarea
                         name="form_message"
+                        required
                         placeholder="留言内容"
                       ></textarea>
                     </div>
                     <div class="form-group col-md-12">
-                      <input
-                        id="form_botcheck"
-                        name="form_botcheck"
-                        class="form-control"
-                        type="hidden"
-                        value=""
-                      />
                       <button
                         class="theme-btn btn-style-one"
                         type="submit"
@@ -344,6 +338,10 @@
                       >
                         <span>Send Message</span>
                       </button>
+                      <div
+                        id="form-status"
+                        style="display: none; margin-top: 15px; font-size: 14px"
+                      ></div>
                     </div>
                   </div>
                 </form>
@@ -435,7 +433,46 @@
     <script src="assets/js/jquery.polyglot.language.switcher.js"></script>
     <script src="assets/js/jquery.ajaxchimp.min.js"></script>
     <script src="assets/js/parallax-scroll.js"></script>
+    <script>
+      (function () {
+        var form = document.getElementById("contact-form");
+        if (!form) {
+          return;
+        }
 
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          var submitButton = form.querySelector('button[type="submit"]');
+          var formData = new FormData(form);
+          var requestBody = new URLSearchParams(formData).toString();
+
+          console.log(new URLSearchParams(formData));
+          submitButton.disabled = true;
+
+          try {
+            var response = await fetch("/send-message", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: requestBody,
+            });
+
+            var result = await response.json();
+            alert(result.message || "Submit finished.");
+
+            if (response.ok) {
+              form.reset();
+            }
+          } catch (error) {
+            alert("Failed to send message.");
+          } finally {
+            submitButton.disabled = false;
+          }
+        });
+      })();
+    </script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
