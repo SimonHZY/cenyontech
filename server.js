@@ -218,7 +218,7 @@ async function handleSendMessage(req, res) {
         `标题: ${form.form_name}`,
         `联系邮箱: ${form.email}`,
         "",
-        "右键内容:",
+        "邮件内容:",
         form.form_message,
       ].join("\n"),
     });
